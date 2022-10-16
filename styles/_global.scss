@@ -1,0 +1,107 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$lightblue: #84C1FC;
+$darkblue: #2F5B85;
+$red: #DD6F6F;
+$yellow: #FAC91E;
+$white: #ebebeb;
+$black: #3a3a3a;
+$red: #DD6F6F;
+
+h1 {
+    @include for-phone-only {
+        font-size: 1.6rem;
+    }
+
+    @include for-tablet-portrait-up {
+        font-size: 2.0rem;
+    }
+
+    @include for-tablet-landscape-up {
+        font-size: 2.4rem;
+    }
+
+    @include for-desktop-up {
+        font-size: 3.2rem;
+    }
+
+    @include for-big-desktop-up {
+        font-size: 4rem;
+    }
+}
+
+h2 {
+    @include for-phone-only {
+        font-size: 1rem;
+    }
+
+    @include for-tablet-portrait-up {
+        font-size: 1.2rem;
+    }
+
+    @include for-tablet-landscape-up {
+        font-size: 1.6rem;
+    }
+
+    @include for-desktop-up {
+        font-size: 1.8rem;
+    }
+}
+
+h3,
+p,
+a {
+    @include for-phone-only {
+        font-size: .8rem;
+    }
+
+    @include for-tablet-portrait-up {
+        font-size: 1rem;
+    }
+}
+
+body {
+    font-size: 62.5%;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+img {
+    width: auto;
+    height: 100%;
+}
+
+h2, p, h3 {
+    font-weight: 300;
+}
+.page__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ul,
+li,
+a,
+button {
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    @include for-phone-only {
+        padding: 10px 20px;
+    }
+    @include for-tablet-portrait-up {
+        margin: 20px 50px;
+    }
+    @include for-desktop-up {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}

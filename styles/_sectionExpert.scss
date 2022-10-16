@@ -1,0 +1,126 @@
+.expert {
+    color: $white;
+    position: relative;
+    h3 {
+        font-weight: 700;
+    }
+    p {
+        font-weight: 400;
+    }
+    &__top, &__bottom {
+        background-color: $darkblue;
+        position: relative;
+        .btn-main {
+            max-width: 300px;
+        }
+    }
+    &__center {
+        position: relative;
+        // max-height: 500px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        h2 {
+            font-size: clamp(1.4rem, 3vw, 3rem);
+            text-align: center;
+            font-weight: 700;
+            span {
+                color: $yellow;
+            }
+        }
+    }
+}
+
+@include for-phone-only {
+    .expert {
+        &__top {
+            padding: 20px;
+        }
+        &__bottom {
+            padding: 20px;
+        }
+    }
+}
+
+@include for-tablet-portrait-up {
+    .expert {
+        &__top {
+            padding: 30px;
+        }
+        &__bottom {
+            padding: 30px;
+        }
+    }
+}
+
+@include for-tablet-landscape-up {
+    .expert {
+        overflow: hidden;
+        &__top, &__bottom {
+            margin: 0 auto;
+            max-width: 800px;
+            position: relative;
+            &::before {
+                    content: '';
+                    position: absolute;
+                    background-color: $darkblue;
+                    top: 0;
+                    right: -600px;
+                    height: 100%;
+                    width: 100%;
+                    z-index: -2;
+            }
+            .top__container {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                align-items: center;
+                gap: 20px;
+                }
+            .top__left {
+                width: 300px;
+                text-align: right;
+            }
+        }
+        &__bottom {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 20px;
+            h3 {
+                text-align: right;
+                width: 300px;
+            }
+        }
+    }
+}
+
+@include for-desktop-up {
+    .top__container {
+        position: relative;
+        margin-top: 100px;
+        z-index: 1;
+    }
+    .expert__center {
+        height: 500px;
+        img {
+            opacity: .9;
+        }
+    }
+}
+
+@include for-big-desktop-up {
+    .expert {
+        margin-top: 350px;
+    }
+}

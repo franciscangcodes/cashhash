@@ -1,0 +1,104 @@
+.subscribe {
+    position: relative;
+    overflow: hidden;
+    &__border {
+        display: none;
+    }
+    .btn-main {
+            width: 100px;
+            display: inline;
+    }
+    .newsletter {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        text-align: center;
+    }
+    input {
+        display: inline;
+        height: 35px;
+        padding-left: 10px;
+    }
+    &__text {
+        text-transform: uppercase;
+        h2 {
+        font-weight: bold;
+        }
+        span {
+            color: $yellow;
+        }
+        h3 {
+            color: $darkblue;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+    }
+    &__background {
+        display: none;
+    }
+}
+
+@include for-phone-only {
+    .subscribe {
+        text-align: center;
+        &__text {
+            padding: 20px;
+        }
+        &__main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            .newsletter {
+                h2 {
+                    margin-bottom: 10px;
+                }
+                &__container {
+                    text-align: center;
+                }           
+            }
+        }
+    }
+}
+
+@include for-tablet-portrait-up {
+    .subscribe {
+        text-align: center;
+        // max-width: 700px;
+        margin: 0 auto;
+        &__main {
+            // margin-top: 50px;
+            max-width: 500px;
+            margin: 0 auto;
+            margin-top: 50px;
+            h2 {
+                margin-bottom: 20px;
+            }
+        }
+        &__text {
+            // margin: 50px 0;
+            max-width: 500px;
+            margin: 50px auto;
+            // margin-bottom: 50px;
+        }
+        &__background {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: scaleY(-1);
+            z-index: -11;
+            width: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }
+    }
+}
+@include for-desktop-up {
+    .subscribe {
+        margin-top: 10rem;
+    }
+}
